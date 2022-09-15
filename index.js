@@ -14,5 +14,12 @@ fetch("https://apis.scrimba.com/jsonplaceholder/posts")
   .then((res) => res.json())
   .then((data) => {
     const postsArr = data.slice(0, 5);
-    postsArr.forEach((el) => console.log(el.title, el.body));
+    let html = "";
+    postsArr.forEach((el) => {
+      html += `
+        <h4>${el.title}</h4>
+        <p>${el.body}</p>
+      `;
+      document.querySelector("#blog-list").innerHTML = html;
+    });
   });
