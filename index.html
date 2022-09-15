@@ -19,6 +19,25 @@
   </head>
   <body>
     <nav><h3>BlogSpace</h3></nav>
+
+    <!-- 
+        Challenge: our form is hideous! Make it less hideous :P
+
+* Lay out the elements in a nicer way, maybe vertically. 
+  (CSS Grid or Flexbox should make this easy)
+* Add some background color to separate it from the posts
+* Style the button however you'd like.
+         -->
+
+    <form action="">
+      <label for="post-title">Enter title</label> <br />
+      <input type="text" id="post-title" /><br />
+      <label for="post-body">Enter post</label><br />
+      <textarea name="Enter text" id="post-body" cols="30" rows="10"></textarea
+      ><br />
+      <button id="post-text">Post</button>
+    </form>
+
     <div id="blog-list"></div>
     <script src="index.js" async defer></script>
   </body>
