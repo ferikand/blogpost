@@ -7,6 +7,7 @@ fetch("https://apis.scrimba.com/jsonplaceholder/posts")
       html += `
         <h3>${el.title}</h3>
         <p>${el.body}</p>
+        <hr />
       `;
       document.querySelector("#blog-list").innerHTML = html;
     });
@@ -28,6 +29,7 @@ document.querySelector("#new-post").addEventListener("submit", (e) => {
       document.querySelector("#blog-list").innerHTML = `
       <h3>${data.title}</h3>
       <p>${data.body}</p>
+      <hr />
       ${document.querySelector("#blog-list").innerHTML}
       `;
     });
