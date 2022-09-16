@@ -39,13 +39,3 @@ form.addEventListener("submit", (e) => {
     });
   form.reset();
 });
-
-/**
- * Challenge: Send this off to the server!
- *
- * 1. BaseURL: https://apis.scrimba.com/jsonplaceholder/
- * 2. Endpoint: /posts
- * 3. method: ???
- * 4. Request body: ??? (Remember to turn it into JSON)
- * 5. Headers: ??? (Check the JSON Placeholder API docs or past casts for help)
- */
