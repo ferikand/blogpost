@@ -1,13 +1,3 @@
-/**
- Challenge:
-
- Style it up!
- 
- * Add a short (~30px height) fixed navbar at the top with the text "BlogSpace". Remember to pad the top of your content so it doesn't get hidden behind the navbar.
- * Add a font from Google Fonts.
- * Any other styling you want to make it look nice!
- */
-
 fetch("https://apis.scrimba.com/jsonplaceholder/posts")
   .then((res) => res.json())
   .then((data) => {
@@ -21,3 +11,27 @@ fetch("https://apis.scrimba.com/jsonplaceholder/posts")
       document.querySelector("#blog-list").innerHTML = html;
     });
   });
+
+document.querySelector("#new-post").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const titleValue = document.querySelector("#post-title").value;
+  const bodyValue = document.querySelector("#post-body").value;
+  const postObj = { title: titleValue, body: bodyValue };
+  fetch("https://apis.scrimba.com/jsonplaceholder/posts", {
+    method: "POST",
+    body: JSON.stringify(postObj),
+    headers: { "Content-Type": "application/json" },
+  })
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+});
+
+/**
+ * Challenge: Send this off to the server!
+ *
+ * 1. BaseURL: https://apis.scrimba.com/jsonplaceholder/
+ * 2. Endpoint: /posts
+ * 3. method: ???
+ * 4. Request body: ??? (Remember to turn it into JSON)
+ * 5. Headers: ??? (Check the JSON Placeholder API docs or past casts for help)
+ */
