@@ -23,7 +23,14 @@ document.querySelector("#new-post").addEventListener("submit", (e) => {
     headers: { "Content-Type": "application/json" },
   })
     .then((res) => res.json())
-    .then((data) => console.log(data));
+    .then((data) => {
+      // console.log(data);
+      document.querySelector("#blog-list").innerHTML = `
+      <h3>${data.title}</h3>
+      <p>${data.body}</p>
+      ${document.querySelector("#blog-list").innerHTML}
+      `;
+    });
 });
 
 /**
