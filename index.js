@@ -19,7 +19,9 @@ fetch("https://apis.scrimba.com/jsonplaceholder/posts")
     renderPosts();
   });
 
-document.querySelector("#new-post").addEventListener("submit", (e) => {
+const form = document.querySelector("#new-post");
+
+form.addEventListener("submit", (e) => {
   e.preventDefault();
   const titleValue = document.querySelector("#post-title").value;
   const bodyValue = document.querySelector("#post-body").value;
@@ -35,6 +37,7 @@ document.querySelector("#new-post").addEventListener("submit", (e) => {
       postsArr = postsArr.slice(0, 5);
       renderPosts();
     });
+  form.reset();
 });
 
 /**
