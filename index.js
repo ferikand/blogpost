@@ -39,3 +39,9 @@ form.addEventListener("submit", (e) => {
     });
   form.reset();
 });
+
+fetch("https://apis.scrimba.com/openweathermap/data/2.5/weather?q=Granada")
+  .then((res) => res.json())
+  .then((data) =>
+    console.log(data.name, ": ", (data.main.temp - 273.15).toFixed())
+  );
